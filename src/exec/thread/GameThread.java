@@ -1,4 +1,4 @@
 package exec.thread;
 
-public class GameThread {
+public class GameThread extends Thread{
 }
