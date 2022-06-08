@@ -145,6 +145,7 @@ public class Player {
         int afterGold = beforeGold - 4;
         setGold(afterGold);
         int afterExp = beforeExp + 4;
+        setExp(afterExp);
         if(afterExp > calExpToLevel(beforeLevel + 1)){
             upLevel();
         }
