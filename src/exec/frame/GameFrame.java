@@ -102,5 +102,4 @@ public class GameFrame extends JFrame {
         this.gameJPanel = gameJPanel;
     }
 
-
 }
