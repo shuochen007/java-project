@@ -67,6 +67,7 @@ public class Player {
         this.goldPerRound = 1;
         this.level = 1;
         this.exp = 0;
+        this.boardCapacity = 1;
         this.soldierList = null;
         this.celebrity = null;
         this.onPrepareNum = 0;
