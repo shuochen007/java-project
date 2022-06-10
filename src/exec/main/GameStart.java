@@ -32,4 +32,28 @@ public class GameStart {
         MusicThread musicPlayer = new MusicThread();
         musicPlayer.start();
     }
+    /**
+     * 界面切换
+     * @param panelName 界面名称
+     */
+    public static void changeJPanel(String panelName){
+        if(panelName == "game") {
+            GameControl.setGameRunning(true);
+            gameFrame.addListener();
+        } else {
+            GameControl.setGameRunning(false);
+            gameFrame.removeListener();
+        }
+        gameFrame.changePanel(panelName);
+
+        //强制刷新，否则监听无效
+        gameFrame.setVisible(false);
+        gameFrame.setVisible(true);
+    }
+
+    public static void startNewGame() {
+        GameControl.setGameRunning(true);
+        gameFrame.startGame();
+        changeJPanel("game");
+    }
 }

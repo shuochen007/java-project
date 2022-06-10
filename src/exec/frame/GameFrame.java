@@ -25,7 +25,7 @@ public class GameFrame extends JFrame {
 
     //	初始化
     protected void init() {
-        this.setTitle("CrazyArcade");
+        this.setTitle("cloudwar");
         List<String> data = ElementLoader.getElementLoader().getGameInfoMap().get("windowSize");/*加载窗口配置*/
         this.setSize(Integer.parseInt(data.get(0)), Integer.parseInt(data.get(1)));/* 设置长宽*/
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

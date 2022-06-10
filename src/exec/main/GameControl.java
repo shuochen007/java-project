@@ -7,7 +7,7 @@ package exec.main;
  * @author: lc
  * @CreateDate: 2022年6月8日 15：13
  */
-public class GameController {
+public class GameControl {
     private static boolean gameRunning = false;
     private static boolean twoPlayer;
     private static int npcNum;
@@ -16,18 +16,18 @@ public class GameController {
         return gameRunning;
     }
     public static void setGameRunning(boolean gameRunning) {
-        GameController.gameRunning = gameRunning;
+        GameControl.gameRunning = gameRunning;
     }
     public static boolean isTwoPlayer() {
         return twoPlayer;
     }
     public static void setTwoPlayer(boolean twoPlayer) {
-        GameController.twoPlayer = twoPlayer;
+        GameControl.twoPlayer = twoPlayer;
     }
     public static int getNpcNum() {
         return npcNum;
     }
     public static void setNpcNum(int npcNum) {
-        GameController.npcNum = npcNum;
+        GameControl.npcNum = npcNum;
     }
 }

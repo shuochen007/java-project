@@ -40,8 +40,9 @@ public class BeginJPanel extends JPanel{
         jLabel.setBounds(0, 0, w, h);
 
         ImageIcon img2 = new ImageIcon("img/bg/introduce.png");
+        img2.setImage(img2.getImage().getScaledInstance(800,800,Image.SCALE_DEFAULT));
         final JLabel jLabel2 = new JLabel(img2);
-        jLabel2.setBounds(w/2, h/6, 600, 800);
+        jLabel2.setBounds(0, 0, w, h);
         jLabel2.setVisible(false);
         //添加单人按键
         JButton onePlayerButton = new JButton();
@@ -97,8 +98,6 @@ public class BeginJPanel extends JPanel{
         this.add(magicBoxButton);
         this.add(jLabel2);
         this.add(jLabel);
-
-
         this.setVisible(true);
         this.setOpaque(true);
     }
