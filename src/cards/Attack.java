@@ -9,9 +9,10 @@ package cards;
  */
  
 
-// 接口 flash，用于刷新每回合的数值
+// 接口 flash，用于刷新
 interface flash {
-     boolean flashRound();
+     boolean flashRound();  //每回合的刷新，会修改attackRound
+     boolean flash();       //上下场的刷新，会修改attackNum
 }
 class Attack implements flash {
     public int attackNum;  //表现出的总攻击，将附加值附加于此
@@ -28,15 +29,23 @@ class Attack implements flash {
     public boolean addAttack(int addNumber) {
         this.attackNum += addNumber;
         if(this.attackNum < 0) {
-            this.attackNum = addNumber;
-            System.out.println("attack is less than zero");
+            this.attackNum = 1;
+            System.out.println("attack is less than zero, we change it to 1");
             return false;   //发生此情况，手动将攻击力设置为1
         }
         return true;
     }
+    public int getBasicAttackNum() {
+        return this.basicAttackNum;
+    }
     @Override
     public boolean flashRound() {
         this.attactRound = this.attackNum;       
+        return true;
+    }
+    @Override
+    public boolean flash() {
+        this.attackNum = this.basicAttackNum;
         return true;
     }
 }
@@ -52,15 +61,23 @@ class Blood implements flash {
     public boolean addBlood(int addNumber) {
         this.bloodNum += addNumber;
         if(this.bloodNum < 0) {
-            this.bloodNum -= addNumber;
-            System.out.println("attack is less than zero");
+            this.bloodNum = 1;
+            System.out.println("blood is less than zero, we change it ro 1");
             return false;
         }
         return true;
     }
+    public int getBasicBloodNum() {
+        return this.basicBloodNum;
+    }
     @Override
     public boolean flashRound() {
         this.bloodRound= this.bloodNum;
+        return true;
+    }
+    @Override
+    public boolean flash() {
+        this.bloodNum = this.basicBloodNum;
         return true;
     }
 }

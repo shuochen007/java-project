@@ -1,34 +1,15 @@
 package exec.model.vo;
-
+import cards.*;
 import java.util.HashMap;
-
 /**
  * 玩家类
  * @author lsc
  * 主要涉及玩家的相关操作及规范
  */
 //只是不报错,完工时不用这个
-class Soldier {
-    private int value;
 
-    public int getValue() {
-        return value;
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
-}
 
-class Celebrity{
-    private int value;
 
-    public int getValue() {
-        return value;
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
-}
 
 public class Player {
     //玩家生命值
