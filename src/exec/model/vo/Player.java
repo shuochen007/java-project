@@ -1,5 +1,7 @@
 package exec.model.vo;
 import cards.*;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 /**
  * 玩家类
@@ -7,9 +9,27 @@ import java.util.HashMap;
  * 主要涉及玩家的相关操作及规范
  */
 //只是不报错,完工时不用这个
+class Soldier {
+    private int value;
+    public boolean isBuy;
+    public int getValue() {
+        return value;
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
+}
 
-
-
+class Celebrity{
+    private int value;
+    public boolean isBuy;
+    public int getValue() {
+        return value;
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
+}
 
 public class Player {
     //玩家生命值
@@ -35,9 +55,15 @@ public class Player {
     //玩家备战席棋子数量
     private int onPrepareNum;
     //玩家持有的棋子队列,key=棋子,value=isBoard
-    private HashMap<Soldier, Boolean> soldierList = new HashMap<>();
+    private HashMap<Soldier, Boolean> soldierList;
     //玩家拥有的伟人
     private Celebrity celebrity;
+    //玩家d牌次数
+    public int refreshNum;
+    //玩家的商店
+    public ArrayList<Soldier> shop;
+    //玩家的伟人商店
+    public Celebrity celebrityShop;
     //构造函数
     public Player(boolean AI){
         this.health = 100;
@@ -49,10 +75,13 @@ public class Player {
         this.level = 1;
         this.exp = 0;
         this.boardCapacity = 1;
-        this.soldierList = null;
+        this.soldierList = new HashMap<>();
         this.celebrity = null;
         this.onPrepareNum = 0;
         this.onBoardNum = 0;
+        this.refreshNum = 0;
+        this.shop = new ArrayList<>();
+        this.celebrityShop = null;
     }
     //以下为get和set相关属性的方法(boolean型是is和set)
     public int getHealth() {
@@ -233,6 +262,7 @@ public class Player {
                 int afterGold = beforeGold - soldier.getValue();
                 setGold(afterGold);
                 this.soldierList.put(soldier, false);
+                soldier.isBuy = true;
             }
             else{
                 //TODO 您的金币不足！
@@ -267,6 +297,7 @@ public class Player {
             int afterPrepare = beforePrepare + 1;
             setOnPrepareNum(afterPrepare);
             this.soldierList.put(soldier,false);
+            soldier.isBuy = false;
         }
         else{
             //TODO 备战席已满，无法再容纳更多棋子！
@@ -290,6 +321,7 @@ public class Player {
                 int afterGold = beforeGold - celebrity.getValue();
                 setGold(afterGold);
                 this.celebrity = celebrity;
+                celebrity.isBuy = true;
             }
             else{
                 //TODO 您的金币不足！
@@ -305,12 +337,16 @@ public class Player {
         int afterGold = beforeGold + celebrity.getValue();
         setGold(afterGold);
         this.celebrity = null;
+        celebrity.isBuy = false;
     }
     //战斗结束后受到伤害
     public void getHurt(int enemyAliveNum) {
         int beforeHealth = getHealth();
         int afterHealth = beforeHealth - (enemyAliveNum * this.getLevel());
         setHealth(afterHealth);
+        if(getHealth() <= 0){
+            dead();
+        }
     }
     //刷新商店
     public void refreshShop() {
@@ -318,10 +354,15 @@ public class Player {
         if(beforeGold >= 2){
             int afterGold = beforeGold - 2;
             setGold(afterGold);
+            this.refreshNum++;
             //TODO 刷新商店
         }
         else{
             //TODO 您的金币不足！
         }
+    }
+    //阵亡
+    public void dead() {
+        this.setAlive(false);
     }
 }
