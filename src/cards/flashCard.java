@@ -246,8 +246,11 @@ public class flashCard implements Runnable {
         lock = new Object();
         allCards.AllCardsInit();
         Player a = new Player(false);
+        Player b = new Player(false);
+        Player c = new Player(false);
         getSoliderShop(a);
-        System.out.println(Arrays.toString(a.shop));
+        getSoliderShop(b);
+        getSoliderShop(c);
     }
     public static boolean getSoliderShop(Player user) {
         flashCard flashcard = new flashCard(user);
@@ -258,6 +261,8 @@ public class flashCard implements Runnable {
             System.out.println(e);
             return false;
         }
+        System.out.println(Arrays.toString(user.shop));
+        System.out.println(user.celebrityShop);
         return true;
     }
     public void run() {
@@ -266,6 +271,7 @@ public class flashCard implements Runnable {
             int j;
             int soliderValue;
             int soliderIndex;
+            int celebrityIndex;
             int flag;
             Random r = new Random();
             int level = user.getLevel();
@@ -364,6 +370,16 @@ public class flashCard implements Runnable {
             }
             for(i = 0;i < 5;i++) {
                 user.shop[i].inshop = true;
+            }
+            if(user.celebrityShop != null)
+                user.celebrityShop.inshop = false;
+            while(true) {
+                celebrityIndex = r.nextInt(9);
+                if(!allCards.celebritys[celebrityIndex].isBuy && !allCards.celebritys[celebrityIndex].inshop) {
+                    allCards.celebritys[celebrityIndex].inshop = true;
+                    user.celebrityShop = allCards.celebritys[celebrityIndex];
+                    break;
+                }
             }
         }
     }
