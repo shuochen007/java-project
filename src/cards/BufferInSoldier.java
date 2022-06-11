@@ -14,10 +14,11 @@ public class BufferInSoldier {
                                   代表攻击力翻倍 
                                   具体实现于Solider类
                                 */
-    public BufferInSoldier(int attackChange,int bloodChange, int special) {
+    public BufferInSoldier(int attackChange,int bloodChange, int special, int kind) {
         this.attackChange = attackChange;
         this.bloodChange = bloodChange;
         this.special = special;
+        this.kind = kind;
     }
     @Override
     public String toString() {

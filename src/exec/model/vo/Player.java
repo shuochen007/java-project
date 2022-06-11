@@ -9,27 +9,6 @@ import java.util.HashMap;
  * 主要涉及玩家的相关操作及规范
  */
 //只是不报错,完工时不用这个
-class Soldier {
-    private int value;
-    public boolean isBuy;
-    public int getValue() {
-        return value;
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
-}
-
-class Celebrity{
-    private int value;
-    public boolean isBuy;
-    public int getValue() {
-        return value;
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
-}
 
 public class Player {
     //玩家生命值
@@ -61,7 +40,7 @@ public class Player {
     //玩家d牌次数
     public int refreshNum;
     //玩家的商店
-    public ArrayList<Soldier> shop;
+    public Soldier[] shop;
     //玩家的伟人商店
     public Celebrity celebrityShop;
     //构造函数
@@ -80,7 +59,7 @@ public class Player {
         this.onPrepareNum = 0;
         this.onBoardNum = 0;
         this.refreshNum = 0;
-        this.shop = new ArrayList<>();
+        this.shop = new Soldier[5];
         this.celebrityShop = null;
     }
     //以下为get和set相关属性的方法(boolean型是is和set)
