@@ -27,36 +27,36 @@ import static java.lang.Thread.sleep;
    kind 16 重骑兵
    kind 32 骑兵克星
    
-   1 民兵 4 18
-   1 投石兵 1 18
-   1 侦察兵 2 18
-   1 长矛兵 32 18
-   2 剑客 4 12
-   2 游侠 16 12
-   2 弩手 1 12
-   2 卫士 8 32 12
-   2 长枪兵 32 12
-   3 雷欧娜 8 8
-   3 骑射手 1 2 8
-   3 翼骑兵 2 4 8
-   3 狂战士 4 32 8
-   4 战象 24 6
-   4 投石机 1 6
-   4 修仙者 6 6
-   4 黑无常 4 6
-   4 白无常 4 6
-   5 末日机甲 4 8 16 3
-   5 火箭炮 1 32 3
-   5 伊泽瑞尔 1 2 3
+   1 民兵 4 18      1
+   1 投石兵 1 18    1
+   1 侦察兵 2 18    1
+   1 长矛兵 32 18   1
+   2 剑客 4 12      1
+   2 游侠 16 12     1
+   2 弩手 1 12       1 
+   2 卫士 8 32 12   1
+   2 长枪兵 32 12    1
+   3 雷欧娜 8 8     1
+   3 骑射手 1 2 8    1
+   3 翼骑兵 2 4 8      1
+   3 狂战士 4 32 8     1
+   4 战象 24 6        1
+   4 投石机 1 6        1
+   4 修仙者 6 6        1
+   4 黑无常 4 6        1
+   4 白无常 4 6        1
+   5 末日机甲 4 8 16 3  1
+   5 火箭炮 1 32 3     1
+   5 伊泽瑞尔 1 2 3     
    
    伟人： 黄忠 +15 attack
          成吉思汗
-         亚索
+         亚索     
          马老师
          努努  
          天使
-         伽利略
-         弗拉基米尔
+         伽利略    
+         弗拉基米尔  
          爪巴
 * 
 * */
@@ -74,162 +74,162 @@ class allCards{
         Celebrity tmpp;
         BufferInSoldier tmpbuffer;
         for(i = 0;i < 18;i++) {
-            tmp = new Soldier("民兵",15,25,1,2,4,1);  //民兵创建成功
+            tmp = new Soldier("民兵",15,25,1,2,4,1,"img/solider/民兵.png");  //民兵创建成功
             soldiersValue1[j] = tmp;
             j++;
         }
         for(i = 0;i < 18;i++) {
-            tmp = new Soldier("投石兵",20,15,2,2,1,1);  
+            tmp = new Soldier("投石兵",20,15,2,2,1,1,"img/solider/投石兵.png");  
             soldiersValue1[j] = tmp;
             j++;
         }
         for(i = 0;i < 18;i++) {
-            tmp = new Soldier("侦察兵",15,20,1,5,2,1);  
+            tmp = new Soldier("侦察兵",15,20,1,5,2,1,"img/solider/侦察兵.png");  
             soldiersValue1[j] = tmp;
             j++;
         }
         for(i = 0;i < 18;i++) {
-            tmp = new Soldier("长矛兵",25,25,1,1,32,1);
+            tmp = new Soldier("长矛兵",25,25,1,1,32,1,"img/solider/长矛兵.png");
             soldiersValue1[j] = tmp;
             j++;
         }
         j = 0;  //value 2 begin
         for(i = 0;i < 12;i++) {
-            tmp = new Soldier("剑客",20,30,1,2,4,2);  
+            tmp = new Soldier("剑客",20,30,1,2,4,2,"img/solider/剑客.png");  
             soldiersValue2[j] = tmp;
             j++;
         }
         for(i = 0;i < 12;i++) {
-            tmp = new Soldier("游侠",13,40,1,3,16,2);
+            tmp = new Soldier("游侠",13,40,1,3,16,2,"img/solider/游侠.png");
             soldiersValue2[j] = tmp;
             j++;
         }
         for(i = 0;i < 12;i++) {
-            tmp = new Soldier("弩手",30,20,3,2,12,2);
+            tmp = new Soldier("弩手",30,20,3,2,12,2,"img/solider/弩手.png");
             soldiersValue2[j] = tmp;
             j++;
         }
         for(i = 0;i < 12;i++) {
-            tmp = new Soldier("卫士",10,55,1,1,40,2);
+            tmp = new Soldier("卫士",10,55,1,1,40,2,"img/solider/卫士.png");
             soldiersValue2[j] = tmp;
             j++;
         }
         for(i = 0;i < 12;i++) {
-            tmp = new Soldier("长枪兵",25,40,1,1,32,2);
+            tmp = new Soldier("长枪兵",25,40,1,1,32,2,"img/solider/长枪兵.png");
             soldiersValue2[j] = tmp;
             j++;
         }
         j = 0; //value 3 begin
         for(i = 0;i < 8;i++) {
-            tmp = new Soldier("雷欧娜",18,80,1,1,8,3);
+            tmp = new Soldier("雷欧娜",18,80,1,1,8,3,"img/solider/雷欧娜.png");
             soldiersValue3[j] = tmp;
             j++;
         }
         for(i = 0;i < 8;i++) {
-            tmp = new Soldier("骑射手",40,20,3,3,3,3);
+            tmp = new Soldier("骑射手",40,20,3,3,3,3,"img/solider/骑射手.png");
             soldiersValue3[j] = tmp;
             j++;
         }        
         for(i = 0;i < 8;i++) {
-            tmp = new Soldier("翼骑兵",30,45,1,5,6,3);
+            tmp = new Soldier("翼骑兵",30,45,1,5,6,3,"img/solider/翼骑兵.png");
             soldiersValue3[j] = tmp;
             j++;
         }
         for(i = 0;i < 8;i++) {
-            tmp = new Soldier("狂战士",30,50,1,3,36,3);
+            tmp = new Soldier("狂战士",30,50,1,3,36,3,"img/solider/狂战士.png");
             soldiersValue3[j] = tmp;
             j++;
         }
         j = 0; //value 4 begin
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("战象",20,90,1,2,24,4);
+            tmp = new Soldier("战象",20,90,1,2,24,4,"img/solider/战象.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("投石机",45,30,3,2,1,4);
+            tmp = new Soldier("投石机",45,30,3,2,1,4,"img/solider/投石机.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("修仙者",35,55,1,3,6,4);
+            tmp = new Soldier("修仙者",35,55,1,3,6,4,"img/solider/修仙者.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("黑无常",45,45,1,3,4,4);
+            tmp = new Soldier("黑无常",45,45,1,3,4,4,"img/solider/黑无常.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("白无常",40,50,1,3,4,4);
+            tmp = new Soldier("白无常",40,50,1,3,4,4,"img/solider/白无常.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         j = 0; //value 5 begin
         for(i = 0;i < 3;i++) {
-            tmp = new Soldier("末日机甲",50,60,1,3,20,5);
+            tmp = new Soldier("末日机甲",50,60,1,3,20,5,"img/solider/末日机甲.png");
             soldiersValue5[j] = tmp;
             j++;
         }
         for(i = 0;i < 3;i++) {
-            tmp = new Soldier("火箭炮",65,40,4,3,33,5);
+            tmp = new Soldier("火箭炮",65,40,4,3,33,5,"img/solider/火箭炮.png");
             soldiersValue5[j] = tmp;
             j++;
         }
         for(i = 0;i < 3;i++) {
-            tmp = new Soldier("伊泽瑞尔",60,50,1,3,3,5);
+            tmp = new Soldier("伊泽瑞尔",60,50,1,3,3,5,"img/solider/伊泽瑞尔.png");
             soldiersValue5[j] = tmp;
             j++;
         }
         j = 0; //伟人begin
         tmpbuffer = new BufferInSoldier(10,0,0,1);
-        tmpp = new Celebrity("黄忠",tmpbuffer,"为所有神射手增加10攻击力");
+        tmpp = new Celebrity("黄忠",tmpbuffer,"为所有神射手增加10攻击力","img/solider/黄忠.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(10,0,0,2);
-        tmpp = new Celebrity("成吉思汗",tmpbuffer,"为所有轻骑兵增加10攻击力");
+        tmpp = new Celebrity("成吉思汗",tmpbuffer,"为所有轻骑兵增加10攻击力","img/solider/成吉思汗.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(5,5,0,4);
-        tmpp = new Celebrity("亚索",tmpbuffer,"为所有狂刃战士增加5攻击力、5生命值");
+        tmpp = new Celebrity("亚索",tmpbuffer,"为所有狂刃战士增加5攻击力、5生命值","img/solider/亚索.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(0,0,1,8);
-        tmpp = new Celebrity("马老师",tmpbuffer,"你的保镖攻击力翻倍，但他们的血量减半");
+        tmpp = new Celebrity("马老师",tmpbuffer,"你的保镖攻击力翻倍，但他们的血量减半","img/solider/马老师.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(-5,20,0,16);
-        tmpp = new Celebrity("努努",tmpbuffer,"你的重骑兵损失5攻击力，增加20生命值");
+        tmpp = new Celebrity("努努",tmpbuffer,"你的重骑兵损失5攻击力，增加20生命值","img/solider/努努.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(5,10,0,32);
-        tmpp = new Celebrity("天使",tmpbuffer,"你的骑兵克星增加5攻击力，10生命值");
+        tmpp = new Celebrity("天使",tmpbuffer,"你的骑兵克星增加5攻击力，10生命值","img/solider/天使.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(5,0,0,63);
-        tmpp = new Celebrity("伽利略",tmpbuffer,"你的所有单位增加5攻击力");
+        tmpp = new Celebrity("伽利略",tmpbuffer,"你的所有单位增加5攻击力","img/solider/伽利略.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(-5,20,0,63);
-        tmpp = new Celebrity("弗拉基米尔",tmpbuffer,"你的所有单位减少5攻击力，增加20生命值");
+        tmpp = new Celebrity("弗拉基米尔",tmpbuffer,"你的所有单位减少5攻击力，增加20生命值","img/solider/弗拉基米尔.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(0,10,0,63);
-        tmpp = new Celebrity("云顶",tmpbuffer,"你的所有单位增加10生命值");
+        tmpp = new Celebrity("云顶",tmpbuffer,"你的所有单位增加10生命值","img/solider/爪巴.png");
         celebritys[j] = tmpp;
-        for(i = 0;i < 72;i++)
-            System.out.println(soldiersValue1[i]);
-        for(i = 0;i < 60;i++)
-            System.out.println(soldiersValue2[i]);
-        for(i = 0;i < 32;i++)
-            System.out.println(soldiersValue3[i]);
-        for(i = 0;i < 30;i++)
-            System.out.println(soldiersValue4[i]);
+        for(i = 0;i < 72;i+=18)
+            System.out.println(soldiersValue1[i].name + "=" + soldiersValue1[i].img);
+        for(i = 0;i < 60;i+=12)
+            System.out.println(soldiersValue2[i].name + "=" + soldiersValue2[i].img);
+        for(i = 0;i < 32;i+=8)
+            System.out.println(soldiersValue3[i].name + "=" + soldiersValue3[i].img);
+        for(i = 0;i < 30;i+=6)
+            System.out.println(soldiersValue4[i].name + "=" + soldiersValue4[i].img);
+        for(i = 0;i < 9;i+=3)
+            System.out.println(soldiersValue5[i].name + "=" + soldiersValue5[i].img);
         for(i = 0;i < 9;i++)
-            System.out.println(soldiersValue5[i]);
-        for(i = 0;i < 9;i++)
-            System.out.println(celebritys[i]);
+            System.out.println(celebritys[i].name + "=" + celebritys[i].img);
         return 0;
     }
 }

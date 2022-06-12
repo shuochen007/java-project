@@ -4,6 +4,9 @@ package cards;
  * kind 使用位图法管理
  */
 
+import java.util.ArrayList;
+import java.util.Queue;
+
 public class Soldier {
     public String name;
     public Attack attack;   //攻击
@@ -14,7 +17,8 @@ public class Soldier {
     public int kind;        //兵种
     public boolean isBuy;   //
     public boolean inshop;  
-    public Soldier(String name, int basicattack, int basicblood, int basirange, int moviedis, int kind, int value) {
+    public String img; 
+    public Soldier(String name, int basicattack, int basicblood, int basirange, int moviedis, int kind, int value,String img) {
         attack = new Attack(basicattack);
         blood = new Blood(basicblood);
         this.attackRange = basirange;
@@ -24,6 +28,7 @@ public class Soldier {
         this.inshop = false;
         this.name = name;
         this.value = value;
+        this.img = img;
     }
     public int getValue() {
         return this.value;
@@ -51,8 +56,27 @@ public class Soldier {
         blood.flash();
         return 0;
     }
+    public ArrayList<String> getMessage() {
+        ArrayList<String> ans = new ArrayList<>();
+        if((this.kind & 1) != 0)
+            ans.add("神射手");
+        if((this.kind & 2) != 0)
+            ans.add("轻骑兵");
+        if((this.kind & 4) != 0)
+            ans.add("狂刃战士");
+        if((this.kind & 8) != 0)
+            ans.add("保镖");
+        if((this.kind & 16) != 0)
+            ans.add("重骑兵");
+        if((this.kind & 32) != 0)
+            ans.add("骑兵克星");
+        return ans;
+    }
     @Override
     public String toString() {
         return this.name + "攻击力为: " + attack.basicAttackNum + " 血量为：" + blood.basicBloodNum;
+    }
+    public String getImg() {
+        return this.img;
     }
 }

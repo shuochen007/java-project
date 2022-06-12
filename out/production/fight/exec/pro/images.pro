@@ -13,3 +13,5 @@ PlayerA=img/player/player1.png
 PlayerB=img/player/player2.png
 #Map 地图路径
 floor=img/map/floor.png
+#Solider 棋子
+投石兵=img/solider/投石兵.png

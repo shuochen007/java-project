@@ -25,3 +25,5 @@ public class BufferInSoldier {
         return "attackChange is " + attackChange + " bloodChange is " + bloodChange;
     }
 }
+
+
