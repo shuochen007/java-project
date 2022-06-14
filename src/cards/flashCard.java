@@ -10,6 +10,7 @@ import static java.lang.Thread.sleep;
 /* @author hhw
  * 本文件定义d牌 牌库
  * 首先需要实例化该进程的lock，
+ * 首先需要实例化该进程的lock，
  * 为不影响进程的锁
  * 随后为每个用户创建自身的d牌对象
  * 需要d牌时，调用 对象.run
@@ -22,7 +23,7 @@ import static java.lang.Thread.sleep;
 
 /* kind 1 神射手
    kind 2 轻骑兵
-   kind 4 狂刃战士
+   kind 4 战士
    kind 8 保镖
    kind 16 重骑兵
    kind 32 骑兵克星
@@ -36,18 +37,18 @@ import static java.lang.Thread.sleep;
    2 弩手 1 12       1 
    2 卫士 8 32 12   1
    2 长枪兵 32 12    1
-   3 雷欧娜 8 8     1
+   3 武僧 8 8     1
    3 骑射手 1 2 8    1
    3 翼骑兵 2 4 8      1
    3 狂战士 4 32 8     1
    4 战象 24 6        1
    4 投石机 1 6        1
-   4 修仙者 6 6        1
-   4 黑无常 4 6        1
-   4 白无常 4 6        1
+   4 直升飞机 6 6        1
+   4 机械化步兵 4 6        1
+   4 机关枪队 4 6        1
    5 末日机甲 4 8 16 3  1
    5 火箭炮 1 32 3     1
-   5 伊泽瑞尔 1 2 3     
+   5 坦克 1 2 3     
    
    伟人： 黄忠 +15 attack
          成吉思汗
@@ -121,7 +122,7 @@ class allCards{
         }
         j = 0; //value 3 begin
         for(i = 0;i < 8;i++) {
-            tmp = new Soldier("雷欧娜",18,80,1,1,8,3,"img/solider/雷欧娜.png");
+            tmp = new Soldier("武僧",18,80,1,1,8,3,"img/solider/武僧.png");
             soldiersValue3[j] = tmp;
             j++;
         }
@@ -152,17 +153,17 @@ class allCards{
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("修仙者",35,55,1,3,6,4,"img/solider/修仙者.png");
+            tmp = new Soldier("直升飞机",35,55,1,3,6,4,"img/solider/直升飞机.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("黑无常",45,45,1,3,4,4,"img/solider/黑无常.png");
+            tmp = new Soldier("机械化步兵",45,45,1,3,4,4,"img/solider/机械化步兵.png");
             soldiersValue4[j] = tmp;
             j++;
         }
         for(i = 0;i < 6;i++) {
-            tmp = new Soldier("白无常",40,50,1,3,4,4,"img/solider/白无常.png");
+            tmp = new Soldier("机关枪队",40,50,1,3,4,4,"img/solider/机关枪队.png");
             soldiersValue4[j] = tmp;
             j++;
         }
@@ -178,7 +179,7 @@ class allCards{
             j++;
         }
         for(i = 0;i < 3;i++) {
-            tmp = new Soldier("伊泽瑞尔",60,50,1,3,3,5,"img/solider/伊泽瑞尔.png");
+            tmp = new Soldier("坦克",60,50,1,3,3,5,"img/solider/坦克.png");
             soldiersValue5[j] = tmp;
             j++;
         }
@@ -192,7 +193,7 @@ class allCards{
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(5,5,0,4);
-        tmpp = new Celebrity("亚索",tmpbuffer,"为所有狂刃战士增加5攻击力、5生命值","img/solider/亚索.png");
+        tmpp = new Celebrity("亚索",tmpbuffer,"为所有战士增加5攻击力、5生命值","img/solider/亚索.png");
         celebritys[j] = tmpp;
         j++;
         tmpbuffer = new BufferInSoldier(0,0,1,8);
