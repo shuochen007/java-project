@@ -28,7 +28,6 @@ public class GameStart {
         gameFrame = new GameFrame();
         //界面显示
         gameFrame.setVisible(true);
-
         MusicThread musicPlayer= new MusicThread();
         musicPlayer.start();
     }

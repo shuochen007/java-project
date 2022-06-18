@@ -1,8 +1,7 @@
 package exec.frame;
 
 import javax.swing.*;
-import java.awt.Font;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -37,10 +36,16 @@ public class GameJPanel extends JPanel implements Runnable{
 
     }
     private void init() {
+        this.setLayout(null);
+        //添加地板
+        Map<String, List<SuperElement>> elmenteMap = ElementManager.getManager().getMap();
+        elmenteMap.get("floor").add(new floor(300,100,800,400));
         //添加设置按键
         JButton setButton = new JButton();
-        setButton.setIcon(ElementLoader.getElementLoader().getImageMap().get("settings"));
-        setButton.setBounds(5 * w / 6, 2 * h / 3, 180, 60);
+        setButton.setBounds( 1100 , 50 ,30, 30);
+        ImageIcon imgs = new ImageIcon("img/bg/settings.png");
+        imgs.setImage(imgs.getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT));
+        setButton.setIcon(imgs);
         setButton.setBorderPainted(false);
         setButton.setFocusPainted(false);
         setButton.setContentAreaFilled(false);
@@ -50,7 +55,65 @@ public class GameJPanel extends JPanel implements Runnable{
                 GameStart.changeJPanel("setting");
             }
         });
+
+        //hex
+        ImageIcon img2 = new ImageIcon("img/player/hex.png");
+        img2.setImage(img2.getImage().getScaledInstance(400,400, Image.SCALE_DEFAULT));
+        final JLabel jLabel2 = new JLabel(img2);
+        jLabel2.setText("hex");
+        jLabel2.setVerticalTextPosition(JLabel.CENTER);
+        jLabel2.setHorizontalTextPosition(JLabel.CENTER);
+        jLabel2.setBounds(0, 0, w, h);
+        jLabel2.setVisible(false);
+        //添加购买经验值按钮
+        JButton exeButton=new JButton();
+        exeButton.setIcon(new ImageIcon("img/bg/buyexe.png"));
+        exeButton.setBounds(200,  750, 210, 70);
+        exeButton.setBorderPainted(false);
+        exeButton.setFocusPainted(false);
+        exeButton.setContentAreaFilled(false);
+        exeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                //增加经验值
+            }
+        });
+        //添加刷新按钮
+        JButton refreshButton=new JButton();
+        refreshButton.setIcon(new ImageIcon("img/bg/refresh.png"));
+        refreshButton.setBounds(200,  680, 210, 70);
+        refreshButton.setBorderPainted(false);
+        refreshButton.setFocusPainted(false);
+        refreshButton.setContentAreaFilled(false);
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                //刷新
+            }
+        });
+        //添加hex按钮
+        JButton hexButton=new JButton();
+        hexButton.setIcon(new ImageIcon("img/bg/rect3.png"));
+        hexButton.setBounds(1100,  800, 60, 20);
+        hexButton.setBorderPainted(false);
+        hexButton.setFocusPainted(false);
+        hexButton.setContentAreaFilled(false);
+        hexButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO 自动生成的方法存根
+                if(!jLabel2.isVisible())
+                    jLabel2.setVisible(true);
+                else {
+                    jLabel2.setVisible(false);
+                }
+            }
+        });
+        this.add(refreshButton);
+        this.add(exeButton);
         this.add(setButton);
+        this.add(hexButton);
+        this.add(jLabel2);
     }
     //	显示画板内容，绘画
     @Override
@@ -84,9 +147,6 @@ public class GameJPanel extends JPanel implements Runnable{
             }
         }
         //添加设置界面
-
-
-
         g.setFont(new Font("Times New Roman", Font.BOLD, 24));
         int allTime = GameThread.getAllTime()/1000;
         int munite = allTime / 60;

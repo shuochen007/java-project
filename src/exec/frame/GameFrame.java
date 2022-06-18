@@ -23,6 +23,7 @@ public class GameFrame extends JFrame {
 
     public GameFrame() {
         init();
+
     }
 
     //	初始化
@@ -52,6 +53,7 @@ public class GameFrame extends JFrame {
         this.contentPane.add("setting",settingJPanel);
 
         this.layout.show(contentPane, "begin");
+
         this.setVisible(true);
     }
 

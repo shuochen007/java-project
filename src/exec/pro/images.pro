@@ -9,12 +9,13 @@ rect2=img/bg/rect2.png
 rect3=img/bg/rect3.png
 rect4=img/bg/rect4.png
 settings=img/bg/settings.png
-sets=img/bg/set.jpg
+sets=img/bg/set.png
 musiccontrol=img/bg/musiccontrol.png
 backtogame=img/bg/backtogame.png
 #玩家
 PlayerA=img/player/player1.png
 PlayerB=img/player/player2.png
+hex=img/player/hex.png
 #Map 地图路径
 floor=img/map/floor.png
 #Solider 棋子
