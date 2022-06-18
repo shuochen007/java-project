@@ -9,12 +9,14 @@ import javax.swing.JPanel;
 import exec.model.load.ElementLoader;
 import exec.thread.GameKeyListener;
 import exec.thread.GameThread;
+import exec.thread.MusicThread;
 
 public class GameFrame extends JFrame {
     private JPanel contentPane;//主面板
     private BeginJPanel beginJPanel;//开始画板
     private GameJPanel gameJPanel;//画板
     private OverJPanel overJPanel;//结束画板
+    private SettingJPanel settingJPanel;
     private KeyListener keyListener; //游戏按键
     private CardLayout layout;//卡片布局
 
@@ -45,6 +47,9 @@ public class GameFrame extends JFrame {
 
         this.overJPanel = new OverJPanel();
         this.contentPane.add("over",overJPanel);
+
+        this.settingJPanel = new SettingJPanel();
+        this.contentPane.add("setting",settingJPanel);
 
         this.layout.show(contentPane, "begin");
         this.setVisible(true);
@@ -79,7 +84,6 @@ public class GameFrame extends JFrame {
     public void removeListener() {
         this.removeKeyListener(keyListener);
     }
-
 
     //	getter and setter
     public KeyListener getKeyListener() {

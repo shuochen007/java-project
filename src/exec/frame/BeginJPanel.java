@@ -26,8 +26,8 @@ public class BeginJPanel extends JPanel{
     public BeginJPanel(){
         List<String> data = ElementLoader.getElementLoader().getGameInfoMap().get("windowSize");
         this.img = ElementLoader.getElementLoader().getImageMap().get("beginBackground");
-        this.w = new Integer(data.get(0)).intValue();
-        this.h = new Integer(data.get(1)).intValue();
+        this.w = Integer.parseInt(data.get(0));
+        this.h = Integer.parseInt(data.get(1));
         init();
     }
 
@@ -38,7 +38,6 @@ public class BeginJPanel extends JPanel{
         JLabel jLabel = new JLabel(img);
         img.setImage(img.getImage().getScaledInstance(w, h,Image.SCALE_DEFAULT ));
         jLabel.setBounds(0, 0, w, h);
-
         ImageIcon img2 = new ImageIcon("img/bg/introduce.png");
         img2.setImage(img2.getImage().getScaledInstance(800,800,Image.SCALE_DEFAULT));
         final JLabel jLabel2 = new JLabel(img2);

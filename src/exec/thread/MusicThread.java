@@ -13,11 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicThread extends Thread {
+    public static int stop=0;
     private List<String> files;
 
     @Override
     public void run() {
-        startMusic();
+            startMusic();
     }
 
     public MusicThread() {
@@ -31,7 +32,7 @@ public class MusicThread extends Thread {
 
         int i = 0;
         byte[] buffer = new byte[4096];
-        while (true) {
+        while (stop==0) {
             try {
                 File file = new File(files.get(i));
                 InputStream stream = new FileInputStream(file);
@@ -43,8 +44,9 @@ public class MusicThread extends Thread {
                 line.open(format);
                 line.start();
                 while (is.available() > 0) {
+                    if(stop==0){
                     int len = is.read(buffer);
-                    line.write(buffer, 0, len);
+                    line.write(buffer, 0, len);}
                 }
                 line.drain();
                 line.close();

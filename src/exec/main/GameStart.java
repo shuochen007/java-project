@@ -29,7 +29,7 @@ public class GameStart {
         //界面显示
         gameFrame.setVisible(true);
 
-        MusicThread musicPlayer = new MusicThread();
+        MusicThread musicPlayer= new MusicThread();
         musicPlayer.start();
     }
     /**
@@ -50,7 +50,12 @@ public class GameStart {
         gameFrame.setVisible(false);
         gameFrame.setVisible(true);
     }
-
+    public static void stopMusic() throws InterruptedException {
+        MusicThread.stop =1;
+    }
+    public static void keepMusic() throws InterruptedException{
+        MusicThread.stop =0;
+    }
     public static void startNewGame() {
         GameControl.setGameRunning(true);
         gameFrame.startGame();

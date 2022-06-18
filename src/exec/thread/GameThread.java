@@ -16,7 +16,7 @@ import exec.model.vo.SuperElement;
  *
  */
 public class GameThread extends Thread{
-    private boolean running; //表示当前关卡是否在进行
+    private boolean running; //表示当前是否在进行
     private boolean over = false; //表示游戏是否结束，结束返回开始菜单
     private static int sleepTime = 20; //runGame刷新时间
     //倒计时变量
@@ -64,8 +64,6 @@ public class GameThread extends Thread{
             }
         }
     }
-
-
 
     //runGame调用，加入拓展
     public void linkGame() {}
